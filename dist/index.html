@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Chic Pet，给每一位毛孩子的日常添一点精致。探索宠物服饰、牵引绳与可爱发饰。">
+  <title>Chic Pet · 宠爱每一种可爱</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <style>
+    :root{--cream:#fffaf6;--blush:#f7e3e5;--rose:#c98991;--cocoa:#503a34;--ink:#493c39;--muted:#8d7974;--line:#eddeda}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Noto Sans SC","PingFang SC","Microsoft Yahei",sans-serif;font-size:15px}
+    a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}img{display:block;max-width:100%}
+    .announcement{background:#694a43;color:#fff8f5;text-align:center;padding:10px;font-size:11px;letter-spacing:2px}
+    .nav{height:92px;background:rgba(255,250,246,.96);border-bottom:1px solid #f2e8e3;display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,25px);position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+    .logo{display:flex;align-items:center;gap:11px}.logo img{width:65px;height:65px;object-fit:contain;border-radius:50%}.wordmark{font-family:Georgia,serif;color:var(--cocoa);font-size:29px;letter-spacing:-1px}.wordmark small{font-family:Arial,sans-serif;display:block;font-size:8px;letter-spacing:2px;text-align:center;color:var(--rose)}
+    .links{display:flex;gap:17px;font-size:12px}.links a:hover{color:var(--rose)}.nav-right{display:flex;align-items:center;gap:12px}.nav-right button,.menu{border:0;background:none;color:var(--cocoa);font-size:20px}.menu{display:none}
+    .hero{min-height:670px;display:grid;grid-template-columns:45% 55%;background:#f5e8e2}.hero-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:60px 7vw}.eyebrow{color:var(--rose);font-size:11px;letter-spacing:3px;font-weight:700}.hero h1{font-family:Georgia,"Songti SC",serif;font-size:clamp(43px,5vw,77px);font-weight:400;line-height:1.22;margin:24px 0;color:var(--cocoa)}.hero h1 em{font-style:normal;color:var(--rose)}.hero p{line-height:2;color:#876e68;margin:0 0 38px}.cta{border:0;border-radius:30px;background:var(--cocoa);color:white;padding:16px 37px;font-size:13px;letter-spacing:2px;transition:.2s}.cta:hover{background:var(--rose);transform:translateY(-2px)}.hero-visual{position:relative;overflow:hidden}.hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center}.hero-sticker{position:absolute;bottom:35px;left:32px;border-radius:50%;width:125px;height:125px;background:#fff8f0e8;display:grid;place-items:center;text-align:center;font-family:Georgia,serif;color:var(--rose);transform:rotate(-13deg);font-size:19px}
+    .section{padding:90px max(5vw,25px)}.section-heading{text-align:center;margin-bottom:43px}.section-heading h2{font-family:Georgia,"Songti SC",serif;font-size:clamp(29px,3vw,42px);font-weight:400;margin:11px 0;color:var(--cocoa)}.section-heading p{color:var(--muted);font-size:13px;line-height:1.8}.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.category{position:relative;overflow:hidden;min-height:370px;background:#f4e6df;border-radius:170px 170px 12px 12px;cursor:pointer}.category img{width:100%;height:370px;object-fit:cover;transition:transform .4s}.category:hover img{transform:scale(1.04)}.category-caption{position:absolute;left:20px;right:20px;bottom:18px;padding:17px;background:#fff9f3ee;border-radius:8px;text-align:center}.category-caption b{display:block;font-family:Georgia,serif;font-size:24px;font-weight:normal;color:var(--cocoa)}.category-caption span{font-size:12px;color:var(--muted)}
+    .products-area{background:#fbf0ed}.filters{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-bottom:35px}.filter{border:1px solid #e5cfc9;background:transparent;color:var(--muted);border-radius:50px;padding:10px 22px;font-size:12px}.filter.active,.filter:hover{background:var(--cocoa);color:white}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.product{cursor:pointer}.product-photo{height:285px;border-radius:13px;overflow:hidden;background:#f6e6df;position:relative}.product-photo img{height:100%;width:100%;object-fit:cover;transition:transform .35s}.product:hover img{transform:scale(1.05)}.demo-tag{position:absolute;top:12px;left:12px;background:#fffaf2df;color:#765d53;font-size:10px;padding:7px 10px;border-radius:50px}.product h3{font-size:15px;font-weight:500;margin:15px 0 6px}.product p{font-size:12px;color:var(--muted);margin:0}.price{color:var(--cocoa);font-family:Georgia,serif;font-size:17px;margin-top:10px}
+    .story{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center}.story-img{height:500px;border-radius:250px 250px 12px 12px;object-fit:cover;width:100%}.story h2{font-family:Georgia,"Songti SC",serif;font-size:clamp(34px,4vw,53px);font-weight:400;line-height:1.4;color:var(--cocoa)}.story p{font-size:14px;line-height:2.3;color:var(--muted);max-width:440px}.story .signature{font-family:Georgia,serif;color:var(--rose);font-size:25px;margin-top:30px}
+    .ribbon{background:#d99ca4;color:#fff9f5;text-align:center;padding:20px;font-size:13px;letter-spacing:3px}.feature-row{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}.feature{padding:20px 24px}.feature-icon{font-size:35px;color:var(--rose);display:block;margin-bottom:15px}.feature h3{font-family:Georgia,"Songti SC",serif;font-size:21px;font-weight:400;color:var(--cocoa);margin:7px}.feature p{font-size:12px;line-height:2;color:var(--muted)}
+    .lookbook{background:#f4e9e4}.lookbook-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:18px}.lookbook-tile{position:relative;overflow:hidden;border-radius:12px;min-height:350px}.lookbook-tile img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .3s}.lookbook-tile:hover img{transform:scale(1.04)}.lookbook-tile span{position:absolute;bottom:16px;left:16px;background:#fff9f0eb;padding:10px 15px;border-radius:30px;font-size:12px;color:var(--cocoa)}
+    .guide{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center}.guide-img{width:100%;height:440px;object-fit:cover;border-radius:14px}.guide h2{font-family:Georgia,"Songti SC",serif;font-size:38px;font-weight:400;color:var(--cocoa)}.guide p{color:var(--muted);line-height:2.1;font-size:13px}.guide ol{padding-left:20px;color:#705c56;line-height:2.3;font-size:13px}.guide small{color:#9b8278}
+    .faq{background:#fff5f1}.faq-list{max-width:780px;margin:0 auto}.faq details{border-bottom:1px solid #e9d7d2;padding:20px 5px}.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:15px;color:var(--cocoa)}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:'+';font-size:23px;color:var(--rose)}.faq details[open] summary:after{content:'−'}.faq details p{color:var(--muted);font-size:13px;line-height:2;max-width:700px}
+    .product-photo img.flat,.product-photo img.worn{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;transition:opacity .35s ease,transform .4s ease}.product-photo img.worn{opacity:0}.product:hover .product-photo img.flat,.product-photo.show-worn img.flat{opacity:0}.product:hover .product-photo img.worn,.product-photo.show-worn img.worn{opacity:1}.demo-tag{z-index:2}.photo-toggle{display:none;z-index:3;position:absolute;right:11px;bottom:11px;border:0;border-radius:20px;background:#fff9edeb;color:var(--cocoa);padding:8px 12px;font-size:11px}.modal-gallery{min-width:0}.modal-gallery #detailImg{width:100%;height:510px;object-fit:contain;background:#d7bea0}.modal-thumbs{display:flex;gap:10px;padding:10px}.modal-thumbs button{border:1px solid #ddc7be;background:#fffaf6;border-radius:20px;padding:9px 13px;color:var(--cocoa);font-size:11px}.modal-thumbs button.active{background:var(--cocoa);color:white}
+    @media(hover:none){.photo-toggle{display:block}}
+    @media(max-width:680px){.modal-gallery #detailImg{height:270px}}
+    .pet-types{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:38px 0}.pet-type{padding:28px 18px;border:1px solid #e8d2cd;border-radius:12px;background:#fffaf6;text-align:center;cursor:pointer;transition:.2s}.pet-type:hover{background:#f8e7e7;transform:translateY(-2px)}.pet-type .emoji{font-size:28px;display:block;margin-bottom:7px}.pet-type b{font-family:Georgia,"Songti SC",serif;color:var(--cocoa);font-weight:400;font-size:21px}.pet-type small{display:block;color:var(--muted);margin-top:7px}.filter-title{text-align:center;margin-bottom:10px;font-size:11px;letter-spacing:2px;color:#a47d7b}.filter.active{box-shadow:0 0 0 2px #c9899170}.collection-highlight{padding:88px max(5vw,25px);background:#f7e7e4}.limited-intro{text-align:center;margin-bottom:30px}.limited-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.limited-card{background:#fffaf6;border-radius:12px;overflow:hidden;cursor:pointer}.limited-card img{width:100%;height:240px;object-fit:cover}.limited-card div{padding:20px}.limited-card small{color:var(--rose);letter-spacing:1px}.limited-card h3{font-family:Georgia,"Songti SC",serif;color:var(--cocoa);font-weight:400;font-size:20px;margin:10px 0}.limited-card p{font-size:12px;color:var(--muted);line-height:1.8}
+    .footer{background:#5b403b;color:#fff7f2;padding:65px 7vw 25px}.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:45px}.footer h3{font-family:Georgia,serif;font-size:32px;font-weight:normal;margin:0 0 16px}.footer p,.footer a{color:#dfcbc3;font-size:12px;line-height:2}.footer strong{font-size:13px}.footer a{display:block}.foot-bottom{border-top:1px solid #886c65;margin-top:40px;padding-top:20px;font-size:11px;color:#ceb8b0}
+    .chat-launch{position:fixed;right:26px;bottom:24px;z-index:30;background:var(--cocoa);color:white;border:0;border-radius:50px;padding:16px 20px;box-shadow:0 8px 30px #503a3440}.chat-panel{display:none;position:fixed;right:25px;bottom:92px;width:min(365px,calc(100vw - 35px));height:510px;z-index:32;border-radius:18px;background:white;box-shadow:0 10px 55px #503a3435;overflow:hidden;flex-direction:column}.chat-panel.open{display:flex}.chat-head{background:var(--cocoa);color:white;padding:18px;display:flex;justify-content:space-between}.chat-head button{background:none;color:white;border:0;font-size:20px}.messages{flex:1;overflow:auto;padding:20px;background:#fffaf8}.bubble{max-width:86%;padding:12px 15px;border-radius:16px;margin:9px 0;font-size:12px;line-height:1.8;background:#f4e9e5}.bubble.me{margin-left:auto;background:#f0d2d8}.quick{display:flex;gap:7px;flex-wrap:wrap;padding:10px 13px}.quick button{border:1px solid #dec5c5;border-radius:20px;background:white;color:#775b58;padding:7px 10px;font-size:11px}.chat-input{display:flex;border-top:1px solid #eee1dc;padding:12px}.chat-input input{border:0;outline:0;flex:1;min-width:0}.chat-input button{background:var(--rose);border:0;color:white;border-radius:10px;padding:9px 14px}
+    .modal{position:fixed;inset:0;background:#281a18a8;z-index:40;display:none;align-items:center;justify-content:center;padding:25px}.modal.open{display:flex}.modal-content{background:var(--cream);max-width:880px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;border-radius:17px;position:relative}.modal-content>img{width:100%;height:100%;min-height:510px;object-fit:cover}.modal-details{padding:42px}.close{position:absolute;right:14px;top:12px;background:#fff9;border:0;border-radius:50%;width:36px;height:36px;font-size:23px}.modal h2{font-family:Georgia,"Songti SC",serif;font-size:30px;color:var(--cocoa)}.modal p{font-size:13px;line-height:2;color:var(--muted)}.choice-label{font-size:12px;margin-top:20px}.sizes,.colors{display:flex;gap:8px;margin:10px 0}.size-btn,.color-btn{border:1px solid #ddc8c2;background:white;padding:10px 13px;border-radius:6px;font-size:12px}.selected{background:var(--cocoa)!important;color:white!important}.consult{width:100%;margin-top:24px}.notice{background:#fff3e9;padding:12px;border-radius:7px;font-size:11px;color:#886f63;margin-top:20px}
+    @media(max-width:950px){.products{grid-template-columns:repeat(2,1fr)}.links{gap:18px}.hero{min-height:560px}.hero-copy{padding:40px}.category{min-height:270px}.category img{height:300px}}
+    @media(max-width:950px){.limited-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:680px){.announcement{font-size:9px}.nav{height:74px}.logo img{width:47px;height:47px}.wordmark{font-size:23px}.links{display:none;position:absolute;top:74px;left:0;right:0;background:var(--cream);padding:24px;flex-direction:column}.links.show{display:flex}.menu{display:block}.hero{grid-template-columns:1fr}.hero-copy{padding:66px 30px 55px}.hero-visual{height:390px}.section{padding:66px 20px}.categories{grid-template-columns:1fr;gap:20px}.category,.category img{height:330px;min-height:330px}.products{gap:13px}.product-photo{height:230px}.story{grid-template-columns:1fr}.story-img{height:360px}.feature-row{grid-template-columns:1fr;gap:5px}.lookbook-grid{grid-template-columns:1fr 1fr}.lookbook-tile{min-height:240px}.lookbook-tile:first-child{grid-column:span 2;min-height:330px}.guide{grid-template-columns:1fr}.guide-img{height:300px}.footer-inner{grid-template-columns:1fr 1fr}.footer-inner>div:first-child{grid-column:span 2}.modal-content{grid-template-columns:1fr}.modal-content>img{height:270px;min-height:0}.modal-details{padding:27px}.chat-launch{right:15px;bottom:15px}}
+    @media(max-width:680px){.pet-types{gap:8px}.pet-type{padding:20px 8px}.pet-type b{font-size:17px}.limited-grid{gap:10px}.limited-card img{height:170px}.limited-card div{padding:13px}.limited-card h3{font-size:17px}}
+  </style>
+</head>
+<body>
+  <div class="announcement">CHIC PET · LITTLE MOMENTS, LOTS OF LOVE ♡</div>
+  <header class="nav">
+    <a href="#" class="logo"><img src="chic-pet-logo.png" alt="Chic Pet 猫狗蝴蝶结 Logo"><div class="wordmark">Chic Pet<small>PET FASHION</small></div></a>
+    <nav class="links" id="links"><a href="index.html">首页</a><a href="shop.html">全部商品</a><a href="collections.html">系列企划</a><a href="stories.html">宠物 Plog</a><a href="impact.html">关怀行动</a><a href="lost.html">寻宠互助</a><a href="values.html">品牌理念</a><a href="help.html">帮助</a></nav>
+    <div class="nav-right"><a href="shop.html" aria-label="浏览商品" style="font-size:20px">⌕</a><button aria-label="联系客服" onclick="openChat()">♡</button><button class="menu" onclick="document.getElementById('links').classList.toggle('show')" aria-label="菜单">☰</button></div>
+  </header>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy"><div class="eyebrow">CHIC PET · A LITTLE LOVELY EVERY DAY</div><h1>宠爱每一种<br><em>可爱。</em></h1><p>把心动穿在身上，把温柔带在身边。<br>为毛孩子准备的每一件小美好。</p><a class="cta" href="shop.html">探索全部商品 &nbsp; ↗</a></div>
+      <div class="hero-visual"><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1200&q=85" alt="可爱的小狗，Chic Pet 风格示意摄影"><div class="hero-sticker">Made<br>with love ♡</div></div>
+    </section>
+    <div class="ribbon">♡ MADE FOR LITTLE PAWS · 为每一个可爱的日常而设计 ♡</div>
+    <section id="collections" class="section">
+      <div class="section-heading"><div class="eyebrow">CURATED FOR EVERY LITTLE LOVE</div><h2>每一种可爱，都值得被装扮</h2><p>从狗狗、猫咪到其他小型宠物，探索适合它们的不同系列</p></div>
+      <div class="categories">
+        <a href="#products" class="category" onclick="setPet('小狗')"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=700&q=85" alt="狗狗专区"><div class="category-caption"><b>For Dogs</b><span>狗狗专区 · 可爱的散步搭配</span></div></a>
+        <a href="#products" class="category" onclick="setPet('小猫')"><img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=700&q=85" alt="猫咪专区"><div class="category-caption"><b>For Cats</b><span>猫咪专区 · 优雅的小心思</span></div></a>
+        <a href="#products" class="category" onclick="setPet('其他宠物')"><img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=700&q=85" alt="兔子和小型宠物专区"><div class="category-caption"><b>Little Friends</b><span>其他宠物 · 小小伙伴的专属角落</span></div></a>
+      </div>
+    </section>
+    <section id="products" class="section products-area">
+      <div class="section-heading"><div class="eyebrow">SHOP BY PET & COLLECTION</div><h2>探索 Chic Pet 的小世界</h2><p>精选商品现已在品牌体验店陈列。选择你的毛孩子，发现适合它的款式。</p></div>
+      <div class="pet-types">
+        <button class="pet-type" onclick="setPet('小狗')"><span class="emoji">♡</span><b>Dog Boutique</b><small>小狗 · 衣服、牵引与发饰</small></button>
+        <button class="pet-type" onclick="setPet('小猫')"><span class="emoji">✧</span><b>Cat Boutique</b><small>小猫 · 项圈、服饰与配件</small></button>
+        <button class="pet-type" onclick="setPet('其他宠物')"><span class="emoji">❀</span><b>Little Friends</b><small>兔子与其他小型宠物</small></button>
+      </div>
+      <div class="filter-title">按宠物筛选</div>
+      <div class="filters" id="petFilters"><button class="filter active" onclick="setPet('全部')">全部宠物</button><button class="filter" onclick="setPet('小狗')">小狗</button><button class="filter" onclick="setPet('小猫')">小猫</button><button class="filter" onclick="setPet('其他宠物')">其他宠物</button></div>
+      <div class="filter-title">按系列筛选</div>
+      <div class="filters" id="seriesFilters"><button class="filter active" onclick="setSeries('全部')">全部系列</button><button class="filter" onclick="setSeries('日常服饰')">日常服饰</button><button class="filter" onclick="setSeries('散步系列')">散步系列</button><button class="filter" onclick="setSeries('甜心配饰')">甜心配饰</button><button class="filter" onclick="setSeries('季节限定')">季节限定</button><button class="filter" onclick="setSeries('节日限定')">节日限定</button></div>
+      <p id="resultCount" style="font-size:12px;color:#997c74;text-align:right"></p>
+      <div class="products" id="productGrid"></div>
+      <p style="text-align:center;margin:45px 0 0"><a class="cta" style="display:inline-block" href="shop.html">查看全部 24 款商品 ↗</a></p>
+    </section>
+    <section id="limited" class="collection-highlight">
+      <div class="section-heading limited-intro"><div class="eyebrow">LIMITED LITTLE MOMENTS</div><h2>季节与节日限定企划</h2><p>让每个季节都有专属的小惊喜。以下系列仅为未来产品概念提案，并非已经开售。</p></div>
+      <div class="limited-grid">
+        <div class="limited-card" onclick="openProduct(9)" tabindex="0" onkeydown="if(event.key==='Enter')openProduct(9)"><img src="pair-3-0.jpg" alt="春季樱花粉宠物连衣裙概念"><div><small>SPRING EDIT</small><h3>春日樱花系列</h3><p>花朵刺绣、浅粉色与轻盈的小裙装。</p></div></div>
+        <div class="limited-card" onclick="openProduct(10)" tabindex="0" onkeydown="if(event.key==='Enter')openProduct(10)"><img src="pair-3-1.jpg" alt="夏日蓝色网眼宠物胸背概念"><div><small>SUMMER EDIT</small><h3>夏日晴空系列</h3><p>清爽蓝色与轻盈出街的散步灵感。</p></div></div>
+        <div class="limited-card" onclick="openProduct(11)" tabindex="0" onkeydown="if(event.key==='Enter')openProduct(11)"><img src="pair-3-2.jpg" alt="秋季格纹宠物围巾概念"><div><small>AUTUMN EDIT</small><h3>秋日奶茶系列</h3><p>格纹、焦糖色与暖暖的秋季搭配。</p></div></div>
+        <div class="limited-card" onclick="openProduct(8)" tabindex="0" onkeydown="if(event.key==='Enter')openProduct(8)"><img src="pair-2-3.jpg" alt="圣诞雪花宠物针织衣概念"><div><small>HOLIDAY EDIT</small><h3>圣诞暖心系列</h3><p>节日红与雪花针织，收藏冬日仪式感。</p></div></div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:62px;padding-bottom:62px">
+      <div class="feature-row">
+        <div class="feature"><span class="feature-icon">♡</span><h3>一点甜美巧思</h3><p>以蝴蝶结、奶油色和柔和线条为灵感，<br>让毛孩子的日常充满搭配乐趣。</p></div>
+        <div class="feature"><span class="feature-icon">✧</span><h3>每位小伙伴都有风格</h3><p>从猫咪狗狗到其他小型宠物，<br>找到属于它们的个性表达。</p></div>
+        <div class="feature"><span class="feature-icon">❀</span><h3>让陪伴更有仪式感</h3><p>小小配饰也能成为珍贵回忆，<br>把每一次相伴装点得更美好。</p></div>
+      </div>
+    </section>
+    <section id="lookbook" class="section lookbook">
+      <div class="section-heading"><div class="eyebrow">THE CHIC PET JOURNAL</div><h2>毛孩子的穿搭日记</h2><p>三种日常情境，寻找适合你家小可爱的搭配灵感</p></div>
+      <div class="lookbook-grid">
+        <a class="lookbook-tile" href="journal.html"><img loading="lazy" src="lookbook-0.jpg" alt="粉色针织穿搭的小狗"><span>01 · 慵懒午后 / Cozy Day</span></a>
+        <a class="lookbook-tile" href="journal.html"><img loading="lazy" src="lookbook-1.jpg" alt="佩戴格纹配饰的猫咪"><span>02 · 窗边日光 / Soft Morning</span></a>
+        <a class="lookbook-tile" href="journal.html"><img loading="lazy" src="lookbook-2.jpg" alt="秋日散步穿搭的小狗"><span>03 · 秋日漫步 / Autumn Walks</span></a>
+      </div>
+      <p style="text-align:center;color:#9d8179;font-size:11px;margin-top:21px">Chic Pet 季度造型灵感 · 摄影画面为品牌视觉概念创作</p>
+    </section>
+    <section id="guide" class="section guide">
+      <div><div class="eyebrow">A LITTLE FIT GUIDE</div><h2>选对尺码，<br>可爱也要舒适。</h2><p>购买宠物衣服时，建议先测量毛孩子的胸围、背长与颈围。不同版型的松量会有差异，请以正式商品上架后的尺码表为准。</p><ol><li>让宠物自然站立，不要过度拉紧皮尺。</li><li>胸围测量前腿后方最宽处，背长从颈部至尾根。</li><li>介于两个尺码之间时，结合衣服版型咨询客服。</li></ol><button class="cta" onclick="openChat();ask('尺码怎么选？')">咨询尺码建议 ↗</button><p><small>温馨提示：目前尚无正式商品尺码表，以上为通用测量建议。</small></p></div>
+      <img class="guide-img" loading="lazy" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1000&q=85" alt="可爱狗狗的穿搭与尺码灵感">
+    </section>
+    <section id="story" class="section story">
+      <img class="story-img" src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=1000&q=85" alt="温暖的猫咪摄影">
+      <div><div class="eyebrow">OUR LITTLE STORY</div><h2>让陪伴的日常，<br>多一点点心动。</h2><p>Chic Pet 相信，时尚不只是属于人的表达。无论是出门散步，还是窝在家里的慵懒午后，每只宠物都有自己的可爱个性。我们以猫咪和狗狗为主要灵感，同时为其他小型宠物探索适合的用品与配饰，希望用温柔的色彩、俏皮的细节与精致的搭配灵感，让每一次陪伴更特别。</p><p>我们正在为这份小小的爱，慢慢准备更多美好的东西。</p><div class="signature">With love, Chic Pet ♡</div></div>
+    </section>
+    <section class="section" style="background:#f6e9e4">
+      <div class="section-heading"><div class="eyebrow">MORE THAN PET FASHION</div><h2>小小的可爱，大大的爱。</h2><p>除了为毛孩子设计穿搭，我们还想记录故事、探索更负责任的选择，关怀等待回家的生命。</p></div>
+      <div class="categories" style="gap:17px">
+        <a class="category" href="values.html"><img loading="lazy" src="new-pair-0-0.jpg" alt="Chic Pet 针织细节"><div class="category-caption"><b>Made With Care</b><span>了解设计价值与可持续目标</span></div></a>
+        <a class="category" href="stories.html"><img loading="lazy" src="plog-0.jpg" alt="宠物 Plog 灵感"><div class="category-caption"><b>Little Pet Plog</b><span>记录每个毛孩子的生活故事</span></div></a>
+        <a class="category" href="impact.html"><img loading="lazy" src="about-1.jpg" alt="关怀流浪动物的品牌愿景"><div class="category-caption"><b>Chic Pet Cares</b><span>流浪动物关怀企划与行动记录</span></div></a>
+      </div>
+      <p style="text-align:center;margin:30px auto 0"><a href="lost.html" class="cta" style="display:inline-block">寻找回家的方向 · 寻宠互助 ↗</a></p>
+    </section>
+    <section class="section faq" id="faq">
+      <div class="section-heading"><div class="eyebrow">A LITTLE HELP</div><h2>你可能想知道</h2><p>关于 Chic Pet 商品、尺寸与服务的常见问题</p></div>
+      <div class="faq-list">
+        <details><summary>Chic Pet 有哪些产品系列？</summary><p>Chic Pet 店内陈列了日常服饰、散步系列、甜心配饰，以及春日樱花、夏日晴空、秋日奶茶与节日主题系列。可前往“全部商品”按宠物和系列浏览。</p></details>
+        <details><summary>季节限定款在哪里查看？</summary><p>进入“系列企划”即可探索季节和节日主题，目前页面收录春、夏、秋、圣诞与情人节造型灵感。展示商品为概念款，尚未开放实际交易。</p></details>
+        <details><summary>怎样选择宠物服饰的尺码？</summary><p>请先测量宠物胸围、颈围和背长，再打开商品详情查看尺码选择。尺寸处于两档之间时，建议通过客服咨询适合的穿着松量。</p></details>
+        <details><summary>如何咨询喜欢的商品？</summary><p>打开商品详情，选择颜色与尺码后点击“咨询这件商品”，系统会将商品信息自动带入聊天窗口。目前在线回复为演示，真人客服尚未接入。</p></details>
+        <details><summary>配送与售后服务如何安排？</summary><p>可在“帮助中心”查看配送、订单与售后说明。网站目前是品牌演示版本，不接受真实支付，实际服务条款将在正式交易开放前公布。</p></details>
+      </div>
+      <p style="text-align:center;margin-top:30px"><a href="help.html" class="cta" style="display:inline-block">查看完整帮助中心 ↗</a></p>
+    </section>
+  </main>
+  <footer class="footer"><div class="footer-inner"><div><h3>Chic Pet ♡</h3><p>为每一位毛孩子，收藏日常里的可爱时刻。<br>宠物服饰 · 牵引系列 · 发饰配件</p></div><div><strong>探索</strong><a href="shop.html">全部商品</a><a href="collections.html">系列企划</a><a href="stories.html">宠物 Plog</a><a href="values.html">品牌理念</a></div><div><strong>关怀与服务</strong><a href="impact.html">关怀行动</a><a href="lost.html">寻宠互助</a><a href="help.html">帮助中心</a></div></div><div class="foot-bottom">© 2026 Chic Pet. 品牌网站演示 · 商品、公益计划与故事为概念示例，暂无真实交易或救助申报服务。</div></footer>
+  <button class="chat-launch" onclick="openChat()" aria-label="打开在线客服">♡ 在线客服</button>
+  <aside class="chat-panel" id="chatPanel"><div class="chat-head"><div><b>Chic Pet 在线助手 ♡</b><div style="font-size:11px;opacity:.8;margin-top:5px">常见问题自动回复 · 演示模式</div></div><button onclick="closeChat()" aria-label="关闭客服">×</button></div><div class="messages" id="messages"><div class="bubble">你好呀！欢迎来到 Chic Pet ♡<br>我可以介绍尺码、配送、购买流程，也可以说明如何联系人工客服。</div></div><div class="quick"><button onclick="ask('尺码怎么选？')">尺码指南</button><button onclick="ask('配送需要多久？')">配送问题</button><button onclick="ask('我想转人工客服')">转人工</button></div><form class="chat-input" onsubmit="sendChat(event)"><input id="chatText" aria-label="输入咨询内容" placeholder="输入你的问题…" required><button type="submit">发送</button></form></aside>
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-label="商品详情"><div class="modal-content"><button class="close" onclick="closeProduct()" aria-label="关闭">×</button><div class="modal-gallery"><img id="detailImg" src="" alt="商品图"><div class="modal-thumbs"><button class="active" onclick="showModalPhoto(this,'flat')">产品图</button><button onclick="showModalPhoto(this,'worn')">上身图</button></div></div><div class="modal-details"><div class="eyebrow">CHIC PET COLLECTION</div><h2 id="detailName"></h2><div class="price" id="detailPrice"></div><p id="detailDescription"></p><div class="choice-label">选择颜色</div><div class="colors" id="detailColors"></div><div class="choice-label">选择尺码</div><div class="sizes" id="detailSizes"></div><button class="cta consult" onclick="consultProduct()">咨询这件商品 ↗</button><div class="notice">设计演示商品：图片、售价、颜色、尺寸和库存均非实际售卖信息。</div></div></div></div>
+  <script>
+    const products=[
+      {id:1,pet:'小狗',series:'日常服饰',name:'奶油云朵针织衫',price:129,img:'item-1-2.jpg',desc:'奶油白麻花针织小毛衣，温暖简约的日常穿搭概念。',colors:['奶油白'],sizes:['XS','S','M','L']},
+      {id:2,pet:'小狗',series:'甜心配饰',name:'珍珠蝴蝶结发卡',price:39,img:'item-1-0.jpg',desc:'真正的粉色蝴蝶结发卡造型，点缀精致的珍珠细节。',colors:['豆沙粉'],sizes:['均码']},
+      {id:3,pet:'小狗',series:'散步系列',name:'蔷薇粉胸背牵引套装',price:159,img:'item-1-1.jpg',desc:'粉色胸背与同色系牵引绳组合，展示金属扣具和可调节织带。',colors:['蔷薇粉'],sizes:['S','M','L']},
+      {id:4,pet:'小猫',series:'甜心配饰',name:'甜心铃铛猫咪项圈',price:69,img:'item-1-3.jpg',desc:'粉色柔软项圈搭配铃铛和爱心吊饰的概念款。',colors:['樱花粉'],sizes:['S','M']},
+      {id:5,pet:'小猫',series:'散步系列',name:'丁香花猫咪胸背套装',price:139,img:'item-2-0.jpg',desc:'为猫咪设计灵感的浅紫色胸背与配套牵引绳。',colors:['丁香紫'],sizes:['S','M']},
+      {id:6,pet:'小狗',series:'甜心配饰',name:'小花园花朵发夹',price:49,img:'item-2-1.jpg',desc:'布艺小花瓣搭配发夹结构，适合甜美造型的发饰概念。',colors:['浅粉','奶油白'],sizes:['均码']},
+      {id:7,pet:'其他宠物',series:'散步系列',name:'小兔子迷你胸背',price:99,img:'item-2-3.jpg',desc:'面向兔子的迷你胸背与牵引配件概念，实际使用前需评估动物体型与安全适配。',colors:['奶油杏'],sizes:['小型宠物专属']},
+      {id:8,pet:'小狗',series:'节日限定',name:'圣诞雪花针织衫',price:179,img:'item-2-2.jpg',desc:'冬日酒红与雪花图案的圣诞节限定服饰概念。',colors:['酒红色'],sizes:['XS','S','M','L']},
+      {id:9,pet:'小狗',series:'季节限定',name:'春日樱花小裙装',price:169,img:'item-3-0.jpg',desc:'淡粉色小裙装与樱花刺绣，春季限定设计概念。',colors:['樱花粉'],sizes:['XS','S','M']},
+      {id:10,pet:'小狗',series:'季节限定',name:'夏日晴空轻盈胸背',price:149,img:'item-3-1.jpg',desc:'清凉蓝色网眼胸背和同色系牵引绳的夏日限定概念。',colors:['晴空蓝'],sizes:['S','M','L']},
+      {id:11,pet:'小猫',series:'季节限定',name:'秋日奶茶格纹围巾',price:59,img:'item-3-2.jpg',desc:'焦糖咖色格纹三角巾，适合作为秋季搭配灵感。',colors:['焦糖格纹'],sizes:['S','M']},
+      {id:12,pet:'小狗',series:'节日限定',name:'情人节心动发卡',price:49,img:'item-3-3.jpg',desc:'爱心轮廓与粉红蝴蝶结，情人节小礼物概念。',colors:['爱心红','甜心粉'],sizes:['均码']},
+      {id:13,pet:'其他宠物',series:'散步系列',name:'小兔丁香胸背套装',price:109,img:'item-4-0.jpg',desc:'迷你丁香紫兔用胸背概念，实际产品需符合适配和安全要求。',colors:['丁香紫'],sizes:['小型宠物专属']},
+      {id:14,pet:'其他宠物',series:'日常服饰',name:'豚鼠奶油绒睡袋',price:89,img:'item-4-1.jpg',desc:'为豚鼠等小型宠物构想的柔软绒布休息小窝。',colors:['奶油白'],sizes:['迷你尺寸']},
+      {id:15,pet:'其他宠物',series:'甜心配饰',name:'兔兔花朵软领结',price:45,img:'item-4-2.jpg',desc:'轻盈花朵领结设计概念，使用前应确认宠物舒适与安全。',colors:['雾粉色'],sizes:['小型宠物专属']},
+      {id:16,pet:'其他宠物',series:'散步系列',name:'奶油粉透气外出包',price:229,img:'item-4-3.jpg',desc:'带透气网面的小型宠物便携外出包概念。',colors:['奶油粉'],sizes:['小型宠物']},
+    ];
+    products.forEach((p,i)=>{const sheet=Math.floor(i/4)+1,col=i%4;p.img='pair-'+sheet+'-'+col+'.jpg';p.worn='pair-'+sheet+'-'+(col+4)+'.jpg'});
+    let current=null,chosenColor='',chosenSize='',activePet='全部',activeSeries='全部';
+    function render(){
+      const visible=products.filter(p=>(activePet==='全部'||p.pet===activePet)&&(activeSeries==='全部'||p.series===activeSeries));
+      document.getElementById('resultCount').textContent='共 '+visible.length+' 件概念商品';
+      document.getElementById('productGrid').innerHTML=visible.length?visible.map(p=>`<article class="product" onclick="openProduct(${p.id})" tabindex="0" onkeydown="if(event.key==='Enter')openProduct(${p.id})"><div class="product-photo"><img class="flat" src="${p.img}" alt="${p.name}产品单拍图" loading="lazy"><img class="worn" src="${p.worn}" alt="${p.name}宠物穿戴图" loading="lazy"><span class="demo-tag">${p.series.includes('限定')?'限定企划 · ':'设计概念 · '}${p.pet}</span><button class="photo-toggle" type="button" onclick="event.stopPropagation();this.parentElement.classList.toggle('show-worn')">⇄ 看上身</button></div><h3>${p.name}</h3><p>${p.pet} · ${p.series}</p><div class="price">¥ ${p.price}.00 <span style="font:11px sans-serif;color:#987f78">示例价</span></div></article>`).join(''):'<p style="grid-column:1/-1;text-align:center;color:#947a79;padding:60px 0">这个分类暂时还没有设计概念商品，试试其他系列吧 ♡</p>';
+      document.querySelectorAll('#petFilters .filter').forEach(b=>b.classList.toggle('active',b.textContent===(activePet==='全部'?'全部宠物':activePet)));
+      document.querySelectorAll('#seriesFilters .filter').forEach(b=>b.classList.toggle('active',b.textContent===(activeSeries==='全部'?'全部系列':activeSeries)));
+    }
+    function setPet(value){activePet=value;render()}
+    function setSeries(value){activeSeries=value;render()}
+    function openProduct(id){current=products.find(p=>p.id===id);chosenColor=current.colors[0];chosenSize=current.sizes[0];document.getElementById('detailImg').src=current.img;document.querySelectorAll('.modal-thumbs button').forEach((b,i)=>b.classList.toggle('active',i===0));document.getElementById('detailName').textContent=current.name;document.getElementById('detailPrice').textContent='¥ '+current.price+'.00（示例价）';document.getElementById('detailDescription').textContent=current.desc;updateChoices();document.getElementById('productModal').classList.add('open')}
+    function showModalPhoto(button,type){document.getElementById('detailImg').src=type==='flat'?current.img:current.worn;document.querySelectorAll('.modal-thumbs button').forEach(b=>b.classList.remove('active'));button.classList.add('active')}
+    function updateChoices(){document.getElementById('detailColors').innerHTML=current.colors.map(c=>`<button class="color-btn ${c===chosenColor?'selected':''}" onclick="chosenColor='${c}';updateChoices()">${c}</button>`).join('');document.getElementById('detailSizes').innerHTML=current.sizes.map(s=>`<button class="size-btn ${s===chosenSize?'selected':''}" onclick="chosenSize='${s}';updateChoices()">${s}</button>`).join('')}
+    function closeProduct(){document.getElementById('productModal').classList.remove('open')}
+    document.getElementById('productModal').addEventListener('click',e=>{if(e.target.id==='productModal')closeProduct()});
+    function consultProduct(){const msg='我想咨询「'+current.name+'」，颜色：'+chosenColor+'，尺码：'+chosenSize+'。';closeProduct();openChat();ask(msg)}
+    function openChat(){document.getElementById('chatPanel').classList.add('open');document.getElementById('chatText').focus()}
+    function closeChat(){document.getElementById('chatPanel').classList.remove('open')}
+    function bubble(text,me=false){const box=document.createElement('div');box.className='bubble'+(me?' me':'');box.textContent=text;document.getElementById('messages').appendChild(box);box.scrollIntoView({block:'end',behavior:'smooth'})}
+    function ask(text){openChat();bubble(text,true);let answer;if(/人工|客服|下单|购买|库存/.test(text)){answer='目前网站是设计预览，尚未接入真人客服及订单后台。正式开业前会配置人工客服系统，届时你可以在这里直接对话并确认库存与订单。'}else if(/尺码|大码|小码|尺寸/.test(text)){answer='建议根据宠物胸围、背长和颈围选择尺码。当前展示的是示例尺码，正式上架会提供每件商品的准确尺码表。'}else if(/配送|快递|物流|发货/.test(text)){answer='正式开业后，我们会在此公布配送地区、运费及发货时间。目前尚未开始接单。'}else if(/退换|售后/.test(text)){answer='正式销售时会公布完整的退换货与售后政策。目前是网站设计预览。'}else{answer='谢谢你的咨询 ♡ 现在是 Chic Pet 网站演示版。你可以问我尺码、配送或售后问题；真实商品及人工客服功能会在正式上线前配置。'}setTimeout(()=>bubble(answer),400)}
+    function sendChat(e){e.preventDefault();const input=document.getElementById('chatText');const value=input.value.trim();if(!value)return;input.value='';ask(value)}
+    render();
+  </script>
+</body>
+</html>
